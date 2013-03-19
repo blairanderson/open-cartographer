@@ -29,6 +29,10 @@ app.configure('development', function(){
 
 app.all('/', routes.index);
 
+app.get('/mu-5838535f-4f3e8d3d-3d477ef2-93c7f533', function(req, res){
+  res.send('42');
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
