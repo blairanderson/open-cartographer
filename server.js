@@ -3,10 +3,11 @@
  * Module dependencies.
  */
 
-var express = require('express')
+var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var config = require('config');
 
 var app = express();
 
@@ -19,7 +20,6 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
