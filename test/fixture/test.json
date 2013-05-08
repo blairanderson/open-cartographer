@@ -1,0 +1,14 @@
+{
+  "type": "video",
+  "title": "Chuck Norris stares at you for 10 hours",
+  "image": "http://i1.ytimg.com/vi/LE9VmukcVtQ/maxresdefault.jpg?feature=og",
+  "description": "And he sees everything. Wait. Is that a dream? http://youtube.com/e7magic ← for more Send this video to the one you want to challenge. Music ↓ \"Nightmare Amb...",
+  "video:height": "360",
+  "fb:app_id": "87741124305",
+  "video:width": "640",
+  "url": "http://www.youtube.com/watch?v=LE9VmukcVtQ",
+  "video:type": "application/x-shockwave-flash",
+  "application/json+oembed": "http://www.youtube.com/oembed?format=json&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLE9VmukcVtQ",
+  "site_name": "YouTube",
+  "video": "http://www.youtube.com/v/LE9VmukcVtQ?autohide=1&version=3"
+}
