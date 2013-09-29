@@ -4,6 +4,6 @@ exports.redis = {
 };
 
 if( process.env.REDIS_PASS ){
-  exports.redis.auth = process.env.REDIS_PASS;
+  exports.redis.pass = process.env.REDIS_PASS;
 }
 
