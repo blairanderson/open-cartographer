@@ -52,7 +52,7 @@ app.get('*', function(req, res){
 
   var options = {
     url: url,
-    embed: req.query.embed ? true : false
+    embed: req.query.embed == "false" ? false : true
   };
 
   if( /\/embed/.test(req.url) ){
