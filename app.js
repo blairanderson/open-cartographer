@@ -29,8 +29,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.all('*', function(req, res){
+app.get('*', function(req, res){
   var url = req.method === 'GET' ? req.query.url : req.body.url;
+
+  var options = {
+    url: url,
+    embed: req.query.embed ? true : false
+  };
 
   if( url === undefined ){
     var error = 'URL is undefined';
@@ -39,7 +44,7 @@ app.all('*', function(req, res){
     url = decodeURIComponent(url);
   }
 
-  opengraph.get(url, function(err, graphProperties){
+  opengraph.get(options, function(err, graphProperties){
     if( err ){
       console.error('Error: '+ err +'|url: '+ url);
       return res.json(500, { error: 'An error occurred processing: ' + url });
@@ -48,6 +53,11 @@ app.all('*', function(req, res){
     if( req.query && req.query.callback ){
       res.send(res.query.callback +'('+ JSON.stringify(graphProperties) +')');
     } else {
+      if( graphProperties.embed ){
+        try {
+          graphProperties.embed = JSON.parse(graphProperties.embed);
+        } catch(e){ }
+      }
       res.json(graphProperties);
     }
   });
